@@ -2,7 +2,7 @@ import './App.css';
 import Create from './components/create';
 import Read from './components/read';
 import Update from './components/update';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <div className="main">
         <h2 className="main-header">React CRUD operations</h2>
         <div className="main-route">
-          <Route exact path='/' component={Create} />
+          <Route exact path='/' render={() => (<Redirect to="/create" component={Create}/>)} />
         </div>
         <div className="create-route">
           <Route exact path='/create' component={Create} />

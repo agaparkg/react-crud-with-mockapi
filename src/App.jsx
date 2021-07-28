@@ -9,6 +9,9 @@ function App() {
     <Router>
       <div className="main">
         <h2 className="main-header">React CRUD operations</h2>
+        <div className="main-route">
+          <Route exact path='/' component={Create} />
+        </div>
         <div className="create-route">
           <Route exact path='/create' component={Create} />
         </div>
@@ -18,7 +21,7 @@ function App() {
         <div className="update-route">
           <Route exact path='/update' component={Update} />
         </div>
-    </div>
+      </div>
     </Router>
   );
 }

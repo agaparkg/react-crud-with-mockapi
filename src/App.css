@@ -14,12 +14,12 @@
   font-family: 'Ubuntu', sans-serif;
 }
 
-.create-form label {
+.create-form label, .update-form label {
   color: whitesmoke !important;
   font-family: 'Ubuntu', sans-serif;
   font-size: 12px !important;
 }
 
-.read-route {
-  margin-top: 20px;
+.noshow {
+  display: none;
 }

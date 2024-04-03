@@ -4,7 +4,7 @@ https://user-images.githubusercontent.com/53021935/127402227-a2f2d4d3-9650-44a8-
 
 ### This Project has been deployed to Surge.sh
 
-[thinkable-sound.surge.sh](thinkable-sound.surge.sh)
+[thinkable-sound.surge.sh](https://thinkable-sound.surge.sh/)
 
 ### Here are the steps to deploy an app to Surge.sh
 
@@ -27,4 +27,4 @@ Run "surge", and follow the prompts. All it needs is an email and a password, an
 `$ surge`
 `$ echo "thinkable-sound.surge.sh" > CNAME` ---> this will make sure that you will get the same domain name in every update
 
-- Go to the URL it prints out. For instance, [thinkable-sound.surge.sh](thinkable-sound.surge.sh)
+- Go to the URL it prints out. For instance, [thinkable-sound.surge.sh](https://thinkable-sound.surge.sh/)

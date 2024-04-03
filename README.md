@@ -4,26 +4,27 @@ https://user-images.githubusercontent.com/53021935/127402227-a2f2d4d3-9650-44a8-
 
 ### This Project has been deployed to Surge.sh
 
-https://stupendous-writer.surge.sh
+[thinkable-sound.surge.sh](thinkable-sound.surge.sh)
 
-## Here are the steps to deploy an app to Surge.sh
+### Here are the steps to deploy an app to Surge.sh
 
-Deploying an app to Surge is insanely easy, and it’s even free (including a custom domain and SSL). 
+- Deploying an app to Surge is insanely easy, and it’s even free (including a custom domain and SSL).
 
-(This assumes you already have an app created with Create React App) 
+(This assumes you already have an app created with Create React App)
 
-Install Surge: 
-$ npm install -g surge 
+Install Surge:
+`$ npm install -g surge`
 
-Run the Create React App build: 
-$ cd your-react-project 
-$ npm run build 
+- Run the Create React App build:
+  `$ cd your-react-project`
 
-Switch into the build directory: 
-$ cd build 
+`$ npm run build`
 
-Run "surge", and follow the prompts. All it needs is an email and a password, and you can optionally specify a different domain name. 
-$ surge 
-$ echo "http://gainful-sweater.surge.sh/" > CNAME                     ---> this will make sure that you will get the same domain name in every update 
+- Switch into the build directory:
+  `$ cd build`
 
-Go to the URL it prints out. For instance, https://stupendous-writer.surge.sh 
+Run "surge", and follow the prompts. All it needs is an email and a password, and you can optionally specify a different domain name.
+`$ surge`
+`$ echo "thinkable-sound.surge.sh" > CNAME` ---> this will make sure that you will get the same domain name in every update
+
+- Go to the URL it prints out. For instance, [thinkable-sound.surge.sh](thinkable-sound.surge.sh)

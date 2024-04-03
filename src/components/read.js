@@ -1,8 +1,9 @@
-import axios from 'axios';
-import classNames from 'classnames';
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button, Table } from 'semantic-ui-react';
+import axios from "axios";
+import classNames from "classnames";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Button, Table } from "semantic-ui-react";
+import { BASE_URL } from "./data-url";
 
 const Read = () => {
   const [apiData, setApiData] = useState([]);
@@ -13,7 +14,7 @@ const Read = () => {
     setIsLoading(false);
     setTimeout(() => {
       axios
-        .get('https://6294c225a7203b3ed070594b.mockapi.io/api/v1/fakeData')
+        .get(BASE_URL)
         .then((res) => {
           setIsLoading(true);
           setApiData(res.data);
@@ -25,17 +26,17 @@ const Read = () => {
   const handleUpdate = (userData) => {
     const { id, firstName, lastName, checkbox } = userData;
 
-    localStorage.setItem('ID', id);
-    localStorage.setItem('First Name', firstName);
-    localStorage.setItem('Last Name', lastName);
-    localStorage.setItem('Terms & Conditions Agree?', checkbox);
+    localStorage.setItem("ID", id);
+    localStorage.setItem("First Name", firstName);
+    localStorage.setItem("Last Name", lastName);
+    localStorage.setItem("Terms & Conditions Agree?", checkbox);
   };
 
   const reFetchData = () => {
     setIsLoading(false);
     setTimeout(() => {
       axios
-        .get('https://6294c225a7203b3ed070594b.mockapi.io/api/v1/fakeData')
+        .get(BASE_URL)
         .then((res) => {
           setIsLoading(true);
           setApiData(res.data);
@@ -46,9 +47,7 @@ const Read = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete(
-        `https://6294c225a7203b3ed070594b.mockapi.io/api/v1/fakeData/${id}`
-      )
+      .delete(`${BASE_URL}${id}`)
       .then(() => {
         setIsDeleted(true);
         setTimeout(() => {
@@ -60,24 +59,24 @@ const Read = () => {
   };
 
   const loadingElement = (
-    <div className='ui segment bg-color'>
-      <div className='ui active dimmer'>
-        <div className='ui text loader'>Loading</div>
+    <div className="ui segment bg-color">
+      <div className="ui active dimmer">
+        <div className="ui text loader">Loading</div>
       </div>
       <p></p>
     </div>
   );
 
   const mainElement = (
-    <div className='read-route'>
+    <div className="read-route">
       <div
         className={classNames(
-          'ui message',
+          "ui message",
           { negative: isDeleted },
           { noshow: !isDeleted }
         )}
       >
-        <div className='header'>Success!!</div>
+        <div className="header">Success!!</div>
         <p>User has been deleted.</p>
       </div>
       <Table celled>
@@ -100,23 +99,23 @@ const Read = () => {
                 <Table.Cell>{user.lastName}</Table.Cell>
                 <Table.Cell
                   style={{
-                    textAlign: 'center',
-                    color: user['Terms & Conditions Agree?'] ? 'green' : 'red',
+                    textAlign: "center",
+                    color: user["Terms & Conditions Agree?"] ? "green" : "red",
                   }}
                 >
-                  {user['Terms & Conditions Agree?'] ? 'YES' : 'NO'}
+                  {user["Terms & Conditions Agree?"] ? "YES" : "NO"}
                 </Table.Cell>
                 <Table.Cell>
-                  <Link to='/update'>
+                  <Link to="/update">
                     <Button
-                      className='ui button primary'
+                      className="ui button primary"
                       onClick={() => handleUpdate(user)}
                     >
                       Update
                     </Button>
                   </Link>
                   <Button
-                    className='ui button negative'
+                    className="ui button negative"
                     onClick={() => handleDelete(user.id)}
                   >
                     Delete

@@ -9,6 +9,7 @@ function App() {
     <Router>
       <div className="main">
         <h2 className="main-header">React CRUD operations</h2>
+        <h2 className="main-header">Create new user account below</h2>
         <div className="main-route">
           <Route exact path='/' render={() => (<Redirect to="/create" component={Create}/>)} />
         </div>
